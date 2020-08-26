@@ -1,0 +1,2 @@
+#!/bin/sh -
+ls ./out | grep -P '(.\.gz)|(.\.aux)|(.\.log)' | xargs -I ren rm ./out/ren

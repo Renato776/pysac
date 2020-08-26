@@ -1,16 +1,23 @@
-LATEX_HEADER = '''Hello Latex World'''
+HEADER_F:ILE = open('header.tex', 'r')
+HEADER = HEADER_FILE.read()
+HEADER_FILE.close()
+FOOTER_FILE = open('footer.tex', 'r')
+FOOTER = FOOTER_FILE.read()
+FOOTER_FILE.close()
 
 
 class Doc:
-    def __init__(self,name):
+    def __init__(self, name):
         self.name = name
         self.path = f'/home/renato/PycharmProjects/pysac/out/{self.name}.tex'
-        self.content = LATEX_HEADER + '\n'
+        test = 'Some cool latex contents.'
+        self.content = HEADER + test + '\n'
 
-    def append(self,subject):
+    def append(self, subject):
         self.content += subject.resumen() + '\n'
 
     def save(self):
+        self.content += FOOTER
         file = open(self.path, "w")
-        file.write(self.content+'Some extra stuff')
+        file.write(self.content)
         file.close()
