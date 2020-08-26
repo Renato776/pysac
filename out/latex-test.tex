@@ -1,4 +1,5 @@
-\documentclass[titlepage]{article}
+%\documentclass[titlepage]{article}
+\documentclass{article}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage[spanish]{babel}
@@ -14,16 +15,23 @@
 \newcommand{\nombre}{Renato Flores}
 \newcommand{\carnet}{201709244}
 \newcommand{\universidad}{Universidad de San Carlos de Guatemala}
-\newcommand{\catedratico}{Ing. Otto Salazar}
-\newcommand{\curso}{Auditoria y Revision de Redes 1}
-\newcommand{\titulo}{Como integrar una base de datos inteligente en PostgreSQL}
+\newcommand{\catedratico}{Ing. Jose Squimux}
+\newcommand{\curso}{Matematica Aplicada 2}
+\newcommand{\titulo}{Tarea \#1}
 \newcommand*\rbreak{\par\noindent\linebreak}
 
-\begin{document}
+%Header :
+\author{\nombre , \carnet}
+\title{\textbf{\Huge\titulo}}
 
-\input{/home/renato/latex/caratula/caratula.tex}
-\clearpage
+\begin{document}
+%Use the one bellow If you want a full page caratula.
+%\input{/home/renato/latex/caratula/caratula.tex}
+%\clearpage
+
+\maketitle
+
 Some cool latex contents.
-I printed my own text
+Q = $\sqrt{2} \sqrt{\frac{c_{3} r \left(c_{1} + c_{2}\right)}{c_{1} c_{2} \left(1 - \frac{r}{k}\right)}}$
 
 \end{document}

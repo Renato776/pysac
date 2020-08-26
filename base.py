@@ -1,4 +1,4 @@
-HEADER_F:ILE = open('header.tex', 'r')
+HEADER_FILE = open('header.tex', 'r')
 HEADER = HEADER_FILE.read()
 HEADER_FILE.close()
 FOOTER_FILE = open('footer.tex', 'r')
@@ -10,8 +10,7 @@ class Doc:
     def __init__(self, name):
         self.name = name
         self.path = f'/home/renato/PycharmProjects/pysac/out/{self.name}.tex'
-        test = 'Some cool latex contents.'
-        self.content = HEADER + test + '\n'
+        self.content = HEADER + '\n'
 
     def append(self, subject):
         self.content += subject.resumen() + '\n'

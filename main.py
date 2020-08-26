@@ -2,7 +2,7 @@ from base import Doc
 from io2.inventarios import Inventario
 
 # ----------------------------------------------- Main -----------------------------------------
-ren = Inventario()
+ren = Inventario(r=5, c1=2, c2=3, c3=5, k=8)
 doc = Doc('latex-test')
 doc.append(ren)
 doc.save()
