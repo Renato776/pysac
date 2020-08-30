@@ -30,7 +30,6 @@
 %\clearpage
 
 \maketitle
-  \begin{Huge}
 
 
 \section{Ejercicio 1}
@@ -42,9 +41,45 @@
 \item c3 = 5
 \item k = 8
 \end{itemize}
-\subsection{Cantidad Optima (Q)}
-Q = $\sqrt{2} \sqrt{\frac{c_{3} r \left(c_{1} + c_{2}\right)}{c_{1} c_{2} \left(1 - \frac{r}{k}\right)}}$
+\section{\Huge Cantidad Optima (Q)}
+\begin{Huge}
+Q = $\sqrt{2} \sqrt{\frac{c_{3} r \left(c_{1} + c_{2}\right)}{c_{1} c_{2} \left(1 - \frac{r}{k}\right)}}$\rbreak\rbreak
 Q = 10*sqrt(10)/3
-
 \end{Huge}
+\section{\Huge Cantidad Maxima en inventario (S)}
+\begin{Huge}
+S = $\sqrt{2} \sqrt{\frac{c_{2} c_{3} r \left(1 - \frac{r}{k}\right)}{c_{1} \left(c_{1} + c_{2}\right)}}$\rbreak\rbreak
+S = 3*sqrt(10)/4
+\end{Huge}
+\section{\Huge Costo (C)}
+\begin{Huge}
+C = $\sqrt{2} \sqrt{\frac{c_{1} c_{2} c_{3} r \left(1 - \frac{r}{k}\right)}{c_{1} + c_{2}}}$\rbreak\rbreak
+C = 3*sqrt(10)/2
+\end{Huge}
+\section{\Huge Cantidad maxima de faltantes (D)}
+\begin{Huge}
+D = $Q - S$\rbreak\rbreak
+D = 31*sqrt(10)/12
+\end{Huge}
+\section{\Huge tiempo 1 (t1)}
+\begin{Huge}
+t1 = $\sqrt{\frac{r t_{2}}{k - r}}$\rbreak\rbreak
+t1 = sqrt(15)*sqrt(t2)/3
+\end{Huge}
+\section{\Huge tiempo 2 (t2)}
+\begin{Huge}
+t2 = $\sqrt{2} \sqrt{\frac{c_{2} c_{3} \left(1 - \frac{r}{k}\right)}{c_{1} r \left(c_{1} + c_{2}\right)}}$\rbreak\rbreak
+t2 = 3*sqrt(10)/20
+\end{Huge}
+\section{\Huge tiempo 3 (t3)}
+\begin{Huge}
+t3 = $\sqrt{2} \sqrt{\frac{c_{1} c_{3} \left(1 - \frac{r}{k}\right)}{c_{2} r \left(c_{1} + c_{2}\right)}}$\rbreak\rbreak
+t3 = sqrt(10)/10
+\end{Huge}
+\section{\Huge tiempo 4 (t4)}
+\begin{Huge}
+t4 = $\sqrt{\frac{r t_{3}}{k - r}}$\rbreak\rbreak
+t4 = 2**(3/4)*sqrt(3)*5**(1/4)/6
+\end{Huge}
+
 \end{document}

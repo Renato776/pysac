@@ -23,6 +23,9 @@ class Inventario:
     def __init__(self, name,**kwargs):
         self.content = p_section(name)
         self.values = kwargs
+        self.targets = {'Q':'Cantidad Optima','S':'Cantidad Maxima en inventario',\
+                        'C':'Costo','D':'Cantidad maxima de faltantes','t2':'tiempo 2',\
+                        't1':'tiempo 1','t3':'tiempo 3','t4':'tiempo 4','Ct':'Costo total'}
         self.tuplas = []
         for v in kwargs:
             self.tuplas.append((symbols(v),kwargs[v]))
@@ -41,7 +44,8 @@ class Inventario:
                         'C': symbols('C'),
                         'S': symbols('S'),
                         'D': symbols('D'),
-                        'p': symbols('p')}
+                        'p': symbols('p'),
+                        'Ct': symbols('Ct')}
         if 'k' in kwargs:
             if 'c2' in kwargs:
                 self.model = 1
@@ -49,9 +53,7 @@ class Inventario:
                                    (self.symbols['c1'] + self.symbols['c2'])) /
                                   (self.symbols['c1'] * self.symbols['c2'] * (
                                               1 - self.symbols['r'] / self.symbols['k'])))
-                self.content += p_subsection('Cantidad Optima (Q)')
-                self.content += f'Q = ${ren.latex(self.Q)}$\n'
-                self.content += f'Q = {self.Q.subs(self.tuplas)}\n'
+
                 self.S = ren.sqrt((2 * self.symbols['r'] * self.symbols['c2'] * self.symbols['c3']
                                    * (1 - self.symbols['r']/self.symbols['k']))/((self.symbols['c1']
                                   + self.symbols['c2'])*self.symbols['c1']))
@@ -109,11 +111,14 @@ class Inventario:
                 self.t2 = ren.sqrt(2*self.symbols['c3']/(self.symbols['r']*self.symbols['c1']))
                 self.Ct = self.symbols['c3'] * self.symbols['r'] / self.symbols['Q'] \
                           + self.symbols['c1']*self.symbols['Q']/2 + self.symbols['p']*self.symbols['r']
-        if 'c2' not in kwargs:
-            self.values['c2'] = 0
-        if 'k' not in kwargs:
-            self.values['k'] = 0
-
+        for r in self.targets:
+            if hasattr(self,r):
+                self.content += p_section(f'\\Huge {self.targets[r]} ({r})')
+                self.content +='\\begin{Huge}\n'
+                self.content += f'{r} = ${ren.latex(getattr(self,r))}$\\linebreak\\linebreak\n'
+                self.tuplas.append((r,getattr(self,r).subs(self.tuplas)))
+                self.content += f'{r} = {self.tuplas[len(self.tuplas)-1][1]}\n'
+                self.content += '\\end{Huge}\n'
 
     def resumen(self):
         return self.content
