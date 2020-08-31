@@ -33,7 +33,8 @@
 
 
 \section{Ejercicio 1}
-\subsection{Datos}
+\subsection{\Huge Datos}
+\begin{huge}
 \begin{itemize}
 \item r = 5
 \item c1 = 2
@@ -41,45 +42,53 @@
 \item c3 = 5
 \item k = 8
 \end{itemize}
-\section{\Huge Cantidad Optima (Q)}
-\begin{Huge}
-Q = $\sqrt{2} \sqrt{\frac{c_{3} r \left(c_{1} + c_{2}\right)}{c_{1} c_{2} \left(1 - \frac{r}{k}\right)}}$\rbreak\rbreak
-Q = 10*sqrt(10)/3
-\end{Huge}
+\end{huge}\section{\Huge Cantidad Optima (Q)}
+\begin{huge}
+$Q = \sqrt{2} \sqrt{\frac{c_{3} r \left(c_{1} + c_{2}\right)}{c_{1} c_{2} \left(1 - \frac{r}{k}\right)}}$\rbreak
+$Q = \sqrt{2} \sqrt{\frac{(5)  (5)  \left((2) + (3)\right)}{(2) (3) \left(1 - \frac{ (5) }{ (8) }\right)}}$\rbreak
+$Q = 10.541$
+\end{huge}
 \section{\Huge Cantidad Maxima en inventario (S)}
-\begin{Huge}
-S = $\sqrt{2} \sqrt{\frac{c_{2} c_{3} r \left(1 - \frac{r}{k}\right)}{c_{1} \left(c_{1} + c_{2}\right)}}$\rbreak\rbreak
-S = 3*sqrt(10)/4
-\end{Huge}
+\begin{huge}
+$S = \sqrt{2} \sqrt{\frac{c_{2} c_{3} r \left(1 - \frac{r}{k}\right)}{c_{1} \left(c_{1} + c_{2}\right)}}$\rbreak
+$S = \sqrt{2} \sqrt{\frac{(3) (5)  (5)  \left(1 - \frac{ (5) }{ (8) }\right)}{(2) \left((2) + (3)\right)}}$\rbreak
+$S = 2.372$
+\end{huge}
 \section{\Huge Costo (C)}
-\begin{Huge}
-C = $\sqrt{2} \sqrt{\frac{c_{1} c_{2} c_{3} r \left(1 - \frac{r}{k}\right)}{c_{1} + c_{2}}}$\rbreak\rbreak
-C = 3*sqrt(10)/2
-\end{Huge}
+\begin{huge}
+$C = \sqrt{2} \sqrt{\frac{c_{1} c_{2} c_{3} r \left(1 - \frac{r}{k}\right)}{c_{1} + c_{2}}}$\rbreak
+$C = \sqrt{2} \sqrt{\frac{(2) (3) (5)  (5)  \left(1 - \frac{ (5) }{ (8) }\right)}{(2) + (3)}}$\rbreak
+$C = 4.743$
+\end{huge}
 \section{\Huge Cantidad maxima de faltantes (D)}
-\begin{Huge}
-D = $Q - S$\rbreak\rbreak
-D = 31*sqrt(10)/12
-\end{Huge}
-\section{\Huge tiempo 1 (t1)}
-\begin{Huge}
-t1 = $\sqrt{\frac{r t_{2}}{k - r}}$\rbreak\rbreak
-t1 = sqrt(15)*sqrt(t2)/3
-\end{Huge}
+\begin{huge}
+$D = Q - S$\rbreak
+$D =  (10*sqrt(10)/3)  -  (3*sqrt(10)/4) $\rbreak
+$D = 8.169$
+\end{huge}
 \section{\Huge tiempo 2 (t2)}
-\begin{Huge}
-t2 = $\sqrt{2} \sqrt{\frac{c_{2} c_{3} \left(1 - \frac{r}{k}\right)}{c_{1} r \left(c_{1} + c_{2}\right)}}$\rbreak\rbreak
-t2 = 3*sqrt(10)/20
-\end{Huge}
+\begin{huge}
+$t2 = \sqrt{2} \sqrt{\frac{c_{2} c_{3} \left(1 - \frac{r}{k}\right)}{c_{1} r \left(c_{1} + c_{2}\right)}}$\rbreak
+$t2 = \sqrt{2} \sqrt{\frac{(3) (5) \left(1 - \frac{ (5) }{ (8) }\right)}{(2)  (5)  \left((2) + (3)\right)}}$\rbreak
+$t2 = 0.474$
+\end{huge}
+\section{\Huge tiempo 1 (t1)}
+\begin{huge}
+$t1 = \sqrt{\frac{r t_{2}}{k - r}}$\rbreak
+$t1 = \sqrt{\frac{ (5)  (3*sqrt(10)/20)}{ (8)  -  (5) }}$\rbreak
+$t1 = 0.889$
+\end{huge}
 \section{\Huge tiempo 3 (t3)}
-\begin{Huge}
-t3 = $\sqrt{2} \sqrt{\frac{c_{1} c_{3} \left(1 - \frac{r}{k}\right)}{c_{2} r \left(c_{1} + c_{2}\right)}}$\rbreak\rbreak
-t3 = sqrt(10)/10
-\end{Huge}
+\begin{huge}
+$t3 = \sqrt{2} \sqrt{\frac{c_{1} c_{3} \left(1 - \frac{r}{k}\right)}{c_{2} r \left(c_{1} + c_{2}\right)}}$\rbreak
+$t3 = \sqrt{2} \sqrt{\frac{(2) (5) \left(1 - \frac{ (5) }{ (8) }\right)}{(3)  (5)  \left((2) + (3)\right)}}$\rbreak
+$t3 = 0.316$
+\end{huge}
 \section{\Huge tiempo 4 (t4)}
-\begin{Huge}
-t4 = $\sqrt{\frac{r t_{3}}{k - r}}$\rbreak\rbreak
-t4 = 2**(3/4)*sqrt(3)*5**(1/4)/6
-\end{Huge}
+\begin{huge}
+$t4 = \sqrt{\frac{r t_{3}}{k - r}}$\rbreak
+$t4 = \sqrt{\frac{ (5)  (sqrt(10)/10)}{ (8)  -  (5) }}$\rbreak
+$t4 = 0.726$
+\end{huge}
 
 \end{document}
