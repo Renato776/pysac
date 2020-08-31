@@ -12,7 +12,7 @@ def extract_chars(string):
             chars += char
     return chars, nums
 def p_section(title):
-    return f'\\section{{{title}}}\n'
+    return f'\\section{{\\Huge {title}}}\n'
 def p_subsection(title):
     return f'\\subsection{{{title}}}\n'
 def p_subsubsection(title):
@@ -34,9 +34,10 @@ class Inventario:
         self.content = p_section(name)
         self.values = kwargs
         self.latex_symbols = {}
-        self.targets = {'Q':'Cantidad Optima','S':'Cantidad Maxima en inventario',\
-                        'C':'Costo','D':'Cantidad maxima de faltantes','t2':'tiempo 2',\
-                        't1':'tiempo 1','t3':'tiempo 3','t4':'tiempo 4','Ct':'Costo total'}
+        self.targets = {'Q':'Inventario Optimo','S':'Inventario Maximo',\
+                        'C':'Costo Normal','D':'Carencia Maxima','t2':'Tiempo en agotarse el inventario',\
+                        't1':'Tiempo de produccion','t3':'Tiempo incurrido en faltantes',\
+                        't4':'Tiempo en recuperar los faltantes','Ct':'Costo Total'}
         self.tuplas = []
         for v in kwargs:
             self.tuplas.append((symbols(v),kwargs[v]))
@@ -130,7 +131,7 @@ class Inventario:
                 self.content +='\\begin{huge}\n'
                 jimin = ren.latex(getattr(self,r))
                 self.content += f'${r} = {jimin}$\\rbreak\n'
-                kwargs[r] = getattr(self,r).subs(self.tuplas)
+                kwargs[r] = round(float(getattr(self,r).subs(self.tuplas)),4)
                 self.tuplas.append((r,kwargs[r]))
                 aux = jimin
                 for l in self.latex_symbols:
