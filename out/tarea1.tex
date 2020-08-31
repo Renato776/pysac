@@ -1,0 +1,221 @@
+%\documentclass[titlepage]{article}
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\usepackage{titlesec}
+\titleformat{\section}[block]
+  {\Large\bfseries\filcenter}
+  {}
+  {1em}
+  {}
+\newcommand{\nombre}{Renato Flores}
+\newcommand{\carnet}{201709244}
+\newcommand{\universidad}{Universidad de San Carlos de Guatemala}
+\newcommand{\catedratico}{Ing. Jose Squimux}
+\newcommand{\curso}{Matematica Aplicada 2}
+\newcommand{\titulo}{Tarea \#1}
+\newcommand*\rbreak{\par\noindent\linebreak}
+
+%Header :
+\author{\nombre , \carnet}
+\title{\textbf{\Huge\titulo}}
+
+\begin{document}
+%Use the one bellow If you want a full page caratula.
+%\input{/home/renato/latex/caratula/caratula.tex}
+%\clearpage
+
+\maketitle
+
+
+\section{\Huge Ejercicio 0}
+\subsection{\Huge Datos}
+\begin{huge}
+\begin{itemize}
+\item p = 25
+\item c3 = 50
+\item r = 3000
+\item c1 = 0.3*p
+\item prices = [((0, 39), p), ((40, 69), 0.9*p), ((70, oo), 0.85*p)]
+\end{itemize}
+\end{huge}\section{\Huge \Huge q in [0,39] p = 25}
+\begin{huge}
+$Q = \sqrt{2} \sqrt{\frac{c_{3} r}{c_{1}}}$\rbreak
+$Q = \sqrt{2} \sqrt{\frac{(50)  (3000) }{(7.5000)}}$\rbreak
+$Q = 200.0$
+\end{huge}
+\begin{huge}
+$Ct = \frac{Q c_{1}}{2} + p r + \frac{c_{3} r}{Q}$\rbreak
+$Ct = \frac{ (39)  (7.5000)}{2} +  (25)   (3000)  + \frac{(50)  (3000) }{ (39) }$\rbreak
+$Ct = 78992.375$
+\end{huge}
+\section{\Huge \Huge q in [40,69] p = 22.5000}
+\begin{huge}
+$Q = \sqrt{2} \sqrt{\frac{c_{3} r}{c_{1}}}$\rbreak
+$Q = \sqrt{2} \sqrt{\frac{(50)  (3000) }{(6.7500)}}$\rbreak
+$Q = 210.818$
+\end{huge}
+\begin{huge}
+$Ct = \frac{Q c_{1}}{2} + p r + \frac{c_{3} r}{Q}$\rbreak
+$Ct = \frac{ (69)  (6.7500)}{2} +  (22.5000)   (3000)  + \frac{(50)  (3000) }{ (69) }$\rbreak
+$Ct = 69906.781$
+\end{huge}
+\section{\Huge \Huge q in [70,oo] p = 21.2500}
+\begin{huge}
+$Q = \sqrt{2} \sqrt{\frac{c_{3} r}{c_{1}}}$\rbreak
+$Q = \sqrt{2} \sqrt{\frac{(50)  (3000) }{(6.3750)}}$\rbreak
+$Q = 216.93$
+\end{huge}
+\begin{huge}
+$Ct = \frac{Q c_{1}}{2} + p r + \frac{c_{3} r}{Q}$\rbreak
+$Ct = \frac{ (216.9304)  (6.3750)}{2} +  (21.2500)   (3000)  + \frac{(50)  (3000) }{ (216.9304) }$\rbreak
+$Ct = 65132.932$
+\end{huge}
+\section{\Huge Resumen}
+\begin{large}
+\begin{center}
+\begin{tabular}{ c c c c c c }
+Cantidad & Descuento & Precio & q* & Q* & Costo\\
+0-39 & 0\% & 25 & 200.0 & 39 & 78992.375\\
+40-69 & 10.0000\% & 22.5000 & 210.8184 & 69 & 69906.7812\\
+70-oo & 15.0000\% & 21.2500 & 216.9304 & 216.9304 & 65132.9317
+\end{tabular}
+\end{center}
+\end{large}
+
+\section{\Huge Ejercicio 1}
+\Huge Ciclo productivo con faltantes permitidos\rbreak
+\subsection{\Huge Datos}
+\begin{huge}
+\begin{itemize}
+\item r = 1666.6667
+\item k = 2500
+\item c1 = 0.15
+\item c2 = 1.6666666666666667
+\item c3 = 500
+\end{itemize}
+\end{huge}\section{\Huge \Huge Inventario Optimo (Q)}
+\begin{huge}
+$Q = \sqrt{2} \sqrt{\frac{c_{3} r \left(c_{1} + c_{2}\right)}{c_{1} c_{2} \left(1 - \frac{r}{k}\right)}}$\rbreak
+$Q = \sqrt{2} \sqrt{\frac{(500)  (1666.6667)  \left((0.15) + (1.6666666666666667)\right)}{(0.15) (1.6666666666666667) \left(1 - \frac{ (1666.6667) }{ (2500) }\right)}}$\rbreak
+$Q = 6027.714$
+\end{huge}
+\section{\Huge \Huge Inventario Maximo (S)}
+\begin{huge}
+$S = \sqrt{2} \sqrt{\frac{c_{2} c_{3} r \left(1 - \frac{r}{k}\right)}{c_{1} \left(c_{1} + c_{2}\right)}}$\rbreak
+$S = \sqrt{2} \sqrt{\frac{(1.6666666666666667) (500)  (1666.6667)  \left(1 - \frac{ (1666.6667) }{ (2500) }\right)}{(0.15) \left((0.15) + (1.6666666666666667)\right)}}$\rbreak
+$S = 1843.338$
+\end{huge}
+\section{\Huge \Huge Costo Normal (C)}
+\begin{huge}
+$C = \sqrt{2} \sqrt{\frac{c_{1} c_{2} c_{3} r \left(1 - \frac{r}{k}\right)}{c_{1} + c_{2}}}$\rbreak
+$C = \sqrt{2} \sqrt{\frac{(0.15) (1.6666666666666667) (500)  (1666.6667)  \left(1 - \frac{ (1666.6667) }{ (2500) }\right)}{(0.15) + (1.6666666666666667)}}$\rbreak
+$C = 276.501$
+\end{huge}
+\section{\Huge \Huge Carencia Maxima (D)}
+\begin{huge}
+$D = Q - S$\rbreak
+$D =  (6027.714)  -  (1843.3375) $\rbreak
+$D = 4184.377$
+\end{huge}
+\section{\Huge \Huge Tiempo en agotarse el inventario (t2)}
+\begin{huge}
+$t2 = \sqrt{2} \sqrt{\frac{c_{2} c_{3} \left(1 - \frac{r}{k}\right)}{c_{1} r \left(c_{1} + c_{2}\right)}}$\rbreak
+$t2 = \sqrt{2} \sqrt{\frac{(1.6666666666666667) (500) \left(1 - \frac{ (1666.6667) }{ (2500) }\right)}{(0.15)  (1666.6667)  \left((0.15) + (1.6666666666666667)\right)}}$\rbreak
+$t2 = 1.106$
+\end{huge}
+\section{\Huge \Huge Tiempo de produccion (t1)}
+\begin{huge}
+$t1 = \sqrt{\frac{r t_{2}}{k - r}}$\rbreak
+$t1 = \sqrt{\frac{ (1666.6667)  (1.106)}{ (2500)  -  (1666.6667) }}$\rbreak
+$t1 = 1.487$
+\end{huge}
+\section{\Huge \Huge Tiempo incurrido en faltantes (t3)}
+\begin{huge}
+$t3 = \sqrt{2} \sqrt{\frac{c_{1} c_{3} \left(1 - \frac{r}{k}\right)}{c_{2} r \left(c_{1} + c_{2}\right)}}$\rbreak
+$t3 = \sqrt{2} \sqrt{\frac{(0.15) (500) \left(1 - \frac{ (1666.6667) }{ (2500) }\right)}{(1.6666666666666667)  (1666.6667)  \left((0.15) + (1.6666666666666667)\right)}}$\rbreak
+$t3 = 0.1$
+\end{huge}
+\section{\Huge \Huge Tiempo en recuperar los faltantes (t4)}
+\begin{huge}
+$t4 = \sqrt{\frac{r t_{3}}{k - r}}$\rbreak
+$t4 = \sqrt{\frac{ (1666.6667)  (0.0995)}{ (2500)  -  (1666.6667) }}$\rbreak
+$t4 = 0.446$
+\end{huge}
+\section{\Huge \Huge Tiempo de produccion (tp)}
+\begin{huge}
+$tp = \frac{Q}{k}$\rbreak
+$tp = \frac{ (6027.714) }{ (2500) }$\rbreak
+$tp = 2.411$
+\end{huge}
+\section{\Huge \Huge tiempo de consumo (tc)}
+\begin{huge}
+$tc = \frac{Q}{r}$\rbreak
+$tc = \frac{ (6027.714) }{ (1666.6667) }$\rbreak
+$tc = 3.617$
+\end{huge}
+\section{\Huge \Huge Tiempo total (tt)}
+\begin{huge}
+$tt = tc + tp$\rbreak
+$tt =  (3.6166)  +  (2.4111) $\rbreak
+$tt = 6.028$
+\end{huge}
+
+\section{\Huge Ejercicio 2}
+\Huge Ciclo productivo sin faltantes\rbreak
+\subsection{\Huge Datos}
+\begin{huge}
+\begin{itemize}
+\item r = 600
+\item k = 1440
+\item c1 = 0.0042
+\item c3 = 750
+\end{itemize}
+\end{huge}\section{\Huge \Huge Inventario Optimo (Q)}
+\begin{huge}
+$Q = \sqrt{2} \sqrt{\frac{c_{3} r}{c_{1} \left(1 - \frac{r}{k}\right)}}$\rbreak
+$Q = \sqrt{2} \sqrt{\frac{(750)  (600) }{(0.0042) \left(1 - \frac{ (600) }{ (1440) }\right)}}$\rbreak
+$Q = 19166.297$
+\end{huge}
+\section{\Huge \Huge Inventario Maximo (S)}
+\begin{huge}
+$S = \sqrt{2} \sqrt{\frac{c_{3} r \left(1 - \frac{r}{k}\right)}{c_{1}}}$\rbreak
+$S = \sqrt{2} \sqrt{\frac{(750)  (600)  \left(1 - \frac{ (600) }{ (1440) }\right)}{(0.0042)}}$\rbreak
+$S = 11180.34$
+\end{huge}
+\section{\Huge \Huge Costo Normal (C)}
+\begin{huge}
+$C = \sqrt{2} \sqrt{c_{1} c_{3} r \left(1 - \frac{r}{k}\right)}$\rbreak
+$C = \sqrt{2} \sqrt{(0.0042) (750)  (600)  \left(1 - \frac{ (600) }{ (1440) }\right)}$\rbreak
+$C = 46.957$
+\end{huge}
+\section{\Huge \Huge Tiempo en agotarse el inventario (t2)}
+\begin{huge}
+$t2 = \sqrt{2} \sqrt{\frac{c_{3} \left(1 - \frac{r}{k}\right)}{c_{1} r}}$\rbreak
+$t2 = \sqrt{2} \sqrt{\frac{(750) \left(1 - \frac{ (600) }{ (1440) }\right)}{(0.0042)  (600) }}$\rbreak
+$t2 = 18.634$
+\end{huge}
+\section{\Huge \Huge Tiempo de produccion (tp)}
+\begin{huge}
+$tp = \frac{Q}{k}$\rbreak
+$tp = \frac{ (19166.2969) }{ (1440) }$\rbreak
+$tp = 13.31$
+\end{huge}
+\section{\Huge \Huge tiempo de consumo (tc)}
+\begin{huge}
+$tc = \frac{Q}{r}$\rbreak
+$tc = \frac{ (19166.2969) }{ (600) }$\rbreak
+$tc = 31.944$
+\end{huge}
+\section{\Huge \Huge Tiempo total (tt)}
+\begin{huge}
+$tt = tc + tp$\rbreak
+$tt =  (31.9438)  +  (13.3099) $\rbreak
+$tt = 45.254$
+\end{huge}
+
+\end{document}
